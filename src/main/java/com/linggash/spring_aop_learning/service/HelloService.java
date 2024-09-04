@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class HelloService {
 
     public String hello(String name) {
-        log.info("Call HelloService.hell()");
+        log.info("Call HelloService.hello()");
         return "Hello " + name;
     }
 
@@ -17,4 +17,7 @@ public class HelloService {
         return "Bye " + name;
     }
 
+    public void test(){
+        log.info("Call HelloService.test()");
+    }
 }

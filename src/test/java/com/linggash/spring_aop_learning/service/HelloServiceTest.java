@@ -12,9 +12,11 @@ public class HelloServiceTest {
     private HelloService helloService;
 
     @Test
-    void helService() {
+    void testHelloService() {
         var name = "Bambang";
         Assertions.assertEquals("Hello " + name, helloService.hello(name));
         Assertions.assertEquals("Bye " + name, helloService.bye(name));
+
+        helloService.test();
     }
 }
