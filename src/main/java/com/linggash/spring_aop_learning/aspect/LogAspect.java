@@ -45,10 +45,15 @@ public class LogAspect {
     public void pointCutHelloServiceStringParam(){
     }
 
-    @Before("pointCutHelloServiceStringParam()")
-    public void logStringParameter(JoinPoint joinPoint){
-        String value = (String) joinPoint.getArgs()[0];
-        log.info("Execute method with parameter : {}", value);
+//    @Before("pointCutHelloServiceStringParam()")
+//    public void logStringParameter(JoinPoint joinPoint){
+//        String value = (String) joinPoint.getArgs()[0];
+//        log.info("Execute method with parameter : {}", value);
+//    }
+
+    @Before("pointCutHelloServiceStringParam() && args(name)")
+    public void logStringParameter(String name){
+        log.info("Execute method with parameter : {}", name);
     }
 
     @Pointcut("execution(* com.linggash.spring_aop_learning.service.*.*(..))")

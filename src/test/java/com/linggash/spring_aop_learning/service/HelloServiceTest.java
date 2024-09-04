@@ -14,7 +14,9 @@ public class HelloServiceTest {
     @Test
     void testHelloService() {
         var name = "Bambang";
+        var lastname = "Udin";
         Assertions.assertEquals("Hello " + name, helloService.hello(name));
+        Assertions.assertEquals("Hello " + name + " " + lastname, helloService.hello(name, lastname));
         Assertions.assertEquals("Bye " + name, helloService.bye(name));
 
         helloService.test();
